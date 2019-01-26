@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {sha256} from 'js-sha256';
+import {User} from '../../models/user';
 
 @Injectable()
 export class AuthenticationService {
   constructor(private http: HttpClient) { }
-
 
   login(email: string, password: string) {
     const passwordHashed = sha256(password);
@@ -16,6 +16,7 @@ export class AuthenticationService {
         if (user !== null) {
           // store user details in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
+          console.log(user);
           localStorage.setItem('password', passwordHashed);
           localStorage.setItem('email', email);
         }

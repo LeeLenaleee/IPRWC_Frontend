@@ -6,20 +6,11 @@
           <a class="nav-link" routerLink="/onkosten"><img src="assets/ico-onkosten@2000x.png"> Onkosten</a>
         </li>
         <li class="nav-item" routerLinkActive="active-class">
-          <a class="nav-link" routerLink="/contacten"><img src="assets/ico-overzichten@2000x.png"> Contacten</a>
+          <a class="nav-link" routerLink="/contacten"><img src="assets/ico-overzichten@2000x.png"> Platen</a>
         </li>
 
-        <li class="dropdown nav-item" routerLinkActive="active-class">
-          <a class="dropdown-toggle nav-link" routerlink="/rapportages"><img src="assets/ico-overzichten@2000x.png">Rapportages</a>
-          <ul class="dropdown-menu">
-            <li><a class="nav-link" routerLink="offertes">Offertes</a></li>
-            <li><a class="nav-link" routerLink="facturen">Facturen</a></li>
-            <li><a class="nav-link" routerLink="brieven">Brieven</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item" routerLinkActive="active-class">
-          <a class="nav-link" routerLink="/belasting"><img src="assets/ico-projecten-of-facturen@2000x.png"> Belasting</a>
+        <li class="nav-item" routerLinkActive="active-class" *ngIf="admin">
+          <a class="nav-link" routerLink="/belasting"><img src="assets/ico-projecten-of-facturen@2000x.png">Admin</a>
         </li>
       </ul>
     </div>
