@@ -1,0 +1,20 @@
+<div *ngIf="footer">
+<div>
+  <nav class="albert-navbar">
+    <ul>
+      <li   routerLinkActive="active-class" [routerLinkActiveOptions]="{exact: true}">
+        <a  routerLink=""><img src="assets/main-menu-arrow.png"> Hoofdmenu</a>
+      </li>
+    </ul>
+
+    <ul class="logout-ul">
+      <li  routerLinkActive="active-class">
+        <a  routerLink="/instellingen"><img src="assets/settingsLogo.png"> Instellingen</a>
+      </li>
+      <li class="logout-li" >
+        <a [routerLink]="['/login']"><img src="assets/logout-icon.png"> Uitloggen</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
