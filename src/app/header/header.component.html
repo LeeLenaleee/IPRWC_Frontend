@@ -1,16 +1,25 @@
-<nav class="albert-navbar" *ngIf="header">
+<nav class="albert-navbar">
   <div>
     <div>
       <ul class="nav justify-content-center">
-        <li class="nav-item" routerLinkActive="active-class">
-          <a class="nav-link" routerLink="/onkosten"><img src="assets/ico-onkosten@2000x.png"> Onkosten</a>
+        <li>
+          <img id="logo" src="../../../assets/record-logo.png" alt="">
         </li>
         <li class="nav-item" routerLinkActive="active-class">
-          <a class="nav-link" routerLink="/contacten"><img src="assets/ico-overzichten@2000x.png"> Platen</a>
+          <a class="nav-link" routerLink="/"><img src="assets/ico-onkosten@2000x.png"> Main Menu</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active-class">
+          <a class="nav-link" routerLink="/contacten"><img src="../../assets/vinyl.png"> Platen</a>
         </li>
 
         <li class="nav-item" routerLinkActive="active-class" *ngIf="admin">
-          <a class="nav-link" routerLink="/belasting"><img src="assets/ico-projecten-of-facturen@2000x.png">Admin</a>
+          <a class="nav-link" routerLink="admin"><img src="assets/ico-projecten-of-facturen@2000x.png">Admin</a>
+        </li>
+        <li class="nav-item li-hover"><a routerLink="/login" class="nav-link"><img src="../../assets/user-logo.png" alt=""></a></li>
+        <li class="nav-item li-hover"><a routerLink="/shoopingcart" class="nav-link"><img src="../../assets/shopping-cart-logo.png" alt=""></a></li>
+        <li *ngIf="logout">
+          <!--<button class="btn btn-danger" id="logout" (click)="clickLogout()">Log out</button>-->
+          <img src="../../assets/logout-icon.png" alt="logout" id="logout" (click)="clickLogout()">
         </li>
       </ul>
     </div>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {sha256} from 'js-sha256';
 import {User} from '../../models/user';
+import {HeaderComponent} from '../../header/header.component';
 
 @Injectable()
 export class AuthenticationService {
@@ -15,10 +16,10 @@ export class AuthenticationService {
         // login successful
         if (user !== null) {
           // store user details in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          sessionStorage.setItem('currentUser', JSON.stringify(user));
           console.log(user);
-          localStorage.setItem('password', passwordHashed);
-          localStorage.setItem('email', email);
+          sessionStorage.setItem('password', passwordHashed);
+          sessionStorage.setItem('email', email);
         }
         return user;
       }));
@@ -26,7 +27,7 @@ export class AuthenticationService {
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('password');
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('password');
   }
 }

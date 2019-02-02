@@ -1,6 +1,7 @@
 import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {User} from '../models/user';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,21 +9,26 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, AfterContentChecked {
-  private currentUser: User;
-  constructor() { }
-  private admin = false;
-  private header = false;
+  currentUser: User;
+  logout = false;
+  constructor(private router: Router) { }
+  admin = false;
 
   ngOnInit() {
   }
 
   ngAfterContentChecked(): void {
-    /*const user = localStorage.getItem('currentUser');
-    this.header = user != null;*/
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    this.logout = this.currentUser !== null;
+
     if (this.currentUser !== null) {
-      this.header = true;
       this.admin = this.currentUser.role === 'ADMIN';
-    } else { this.header = false; }
+    }
+  }
+
+  clickLogout() {
+    sessionStorage.clear();
+    this.admin = false;
+    this.router.navigate(['/']);
   }
 }

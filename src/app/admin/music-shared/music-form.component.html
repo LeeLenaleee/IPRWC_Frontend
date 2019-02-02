@@ -1,0 +1,117 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Album</span>
+        </div>
+        <input    type="text"
+                  class="form-control"
+                  placeholder="Sweetener"
+                  ngModel
+                  name="album"
+                  required>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Name</span>
+        </div>
+        <input    type="text"
+                  class="form-control"
+                  placeholder="Ariana Grande"
+                  ngModel
+                  name="zanger"
+                  required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Producent</span>
+        </div>
+        <input    type="text"
+                  class="form-control"
+                  placeholder="Atlantic Ocean"
+                  ngModel
+                  name="producent"
+                  required>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Lengte</span>
+        </div>
+        <input    type="number"
+                  class="form-control"
+                  placeholder="200"
+                  ngModel
+                  name="lengte"
+                  required>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Price</span>
+        </div>
+        <input    type="number"
+                  class="form-control"
+                  placeholder="$$$"
+                  ngModel
+                  name="prijs"
+                  required>
+      </div>
+    </div>
+  </div>
+
+
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group item-margin">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Picture</span>
+        </div>
+        <input    type="text"
+                  class="form-control"
+                  placeholder="Picture URL"
+                  ngModel
+                  name="cover"
+                  required>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-4">
+      <button class="btn" type="submit" [disabled]="!f.valid">{{ buttonTextOne }}</button>
+    </div>
+      <div class="col-4">
+        <button class="btn" [disabled]="buttonTextOne === 'Voeg toe'" type="button" routerLink="/admin">Nieuw</button>
+      </div>
+      <div class="col-4">
+        <button class="btn" type="button" (click)="clearAndDelete()">{{ buttonTextTwo }}</button>
+      </div>
+  </div>
+
+</form>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../models/user';
+import {ItemService} from '../shop/item.service';
+import {ItemModel} from '../models/item.model';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,13 +9,13 @@ import {User} from '../models/user';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-  currentUser: User;
-
-  constructor() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  }
+  item: ItemModel;
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    this.itemService.getRandom().subscribe((random) => {
+      this.item = JSON.parse(JSON.stringify(random));
+    });
   }
 
 }

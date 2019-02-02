@@ -44,5 +44,20 @@ ul {
   margin-left: 100px;
 }
 
+a{
+  cursor: pointer;
+}
+
+#logout{
+  margin-top: 13px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#logo {
+  height: 40px;
+  width: auto;
+}
+
 
 

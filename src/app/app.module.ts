@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { UitloggenComponent } from './inloggen-uitloggen/uitloggen/uitloggen.component';
-import {FooterComponent} from './footer/footer.component';
 import {AppRoutingModule} from './app-routing.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
@@ -16,7 +15,8 @@ import {ErrorInterceptor} from './inloggen-uitloggen/inloggen/error.interceptor'
 import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AlertComponent} from './inloggen-uitloggen/inloggen';
-import {OnkostenModule} from './onkosten/onkosten.module';
+import {ItemService} from './shop/item.service';
+import {MusicModule} from './admin/music.module';
 
 
 @NgModule({
@@ -25,7 +25,6 @@ import {OnkostenModule} from './onkosten/onkosten.module';
     HeaderComponent,
     LoginComponent,
     UitloggenComponent,
-    FooterComponent,
     MainMenuComponent,
     ErrorPageComponent,
     PageNotFoundComponent,
@@ -33,10 +32,10 @@ import {OnkostenModule} from './onkosten/onkosten.module';
   ],
   imports: [
     BrowserModule,
-    OnkostenModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MusicModule,
     AppRoutingModule,
 
   ],
@@ -45,6 +44,7 @@ import {OnkostenModule} from './onkosten/onkosten.module';
     AuthGuard,
     AlertService,
     AuthenticationService,
+    ItemService,
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
