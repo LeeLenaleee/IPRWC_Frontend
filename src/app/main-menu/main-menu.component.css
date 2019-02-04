@@ -18,9 +18,24 @@ img {
   margin-bottom: auto;
 }
 
+.custom{
+  margin-top: 40px;
+  font-size: 2.3em;
+  font-family: Unlock;
+  color: white;
+}
+
+.group-row{
+  margin-top: 50px;
+  text-align: center;
+  font-family: Unlock;
+  color:white;
+}
+
 @media (max-width: 767px) {
   img {
-    width: 90%;
+    width: 50%;
+    height: auto;
   }
 }
 

@@ -14,8 +14,8 @@ export class MusicListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.onkostenService.getOnkosten();
-    this.onkostenService.onkostenEmitter
+    this.onkostenService.getMusics();
+    this.onkostenService.musicEmitter
       .subscribe(
         (music: ItemModel[]) => {
           this.music = music;

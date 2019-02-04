@@ -9,7 +9,7 @@ export class ApiService {
     }
 
     createURI(path: string) {
-        return 'http://localhost:8080/api' + path;
+        return 'http://iprwc.ga:8080/api' + path;
     }
 
     createHeaders(): HttpHeaders {

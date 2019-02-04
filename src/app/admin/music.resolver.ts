@@ -14,7 +14,7 @@ export class MusicResolver implements Resolve<Observable<ItemModel>> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Observable<ItemModel>> |
     Promise<Observable<ItemModel>> | Observable<ItemModel> {
-    return this.musicService.getOnkost(route.params.id);
+    return this.musicService.getMusic(route.params.id);
   }
 
 

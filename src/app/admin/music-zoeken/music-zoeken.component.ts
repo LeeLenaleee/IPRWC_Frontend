@@ -16,10 +16,10 @@ export class MusicZoekenComponent implements OnInit {
   }
 
   searchOmschrijving() {
-    this.musicService.getOnkostenByOmschrijving(this.omschrijving.nativeElement.value)
+    this.musicService.getMusicByOmschrijving(this.omschrijving.nativeElement.value)
       .subscribe(
         (music: ItemModel[]) => {
-          this.musicService.onkostenEmitter.emit(music);
+          this.musicService.musicEmitter.emit(music);
         });
   }
 }

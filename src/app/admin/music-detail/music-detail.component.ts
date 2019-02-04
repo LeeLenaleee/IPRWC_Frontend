@@ -44,12 +44,12 @@ export class MusicDetailComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (confirm('Weet u het zeker?')) {
-      const music = this.musicService.formToOnkost(form);
-      this.musicService.putOnkost(music, this.music.id)
+      const music = this.musicService.formToMusic(form);
+      this.musicService.putMusic(music, this.music.id)
         .subscribe(
           () => {
             alert('Plaat gewijzigd');
-            this.musicService.getOnkosten();
+            this.musicService.getMusics();
           }
         );
     }
@@ -62,12 +62,12 @@ export class MusicDetailComponent implements OnInit {
 
   clearAndDelete() {
     if (confirm('Weet u het zeker?')) {
-      this.musicService.deleteOnkost(+this.route.snapshot.params['id'])
+      this.musicService.deleteMusic(+this.route.snapshot.params['id'])
         .subscribe(
           () => {
-            this.musicService.getOnkosten();
+            this.musicService.getMusics();
             alert('Plaat verwijderd');
-            this.router.navigate(['/admin']);
+            this.router.navigate(['/']);
           }
         );
     }

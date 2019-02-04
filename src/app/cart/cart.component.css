@@ -1,0 +1,28 @@
+hr{
+  border: none;
+  height: 5px;
+  background-color: #12AFAF;
+  width: 100%;
+}
+h2,button{
+  text-align: center;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 400px;
+}
+
+.but{
+  width: 40%;
+  margin-left: 40%;
+}
+
+#paypal-checkout{
+  height: 100px;
+  width: auto;
+}
+

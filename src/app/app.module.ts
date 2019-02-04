@@ -17,6 +17,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AlertComponent} from './inloggen-uitloggen/inloggen';
 import {ItemService} from './shop/item.service';
 import {MusicModule} from './admin/music.module';
+import {ShopListComponent} from './shop/shop-list.component';
+import { ShopItemComponent } from './shop/shop-item/shop-item.component';
+import {ItemResolver} from './shared/item.resolver';
+import { CartComponent } from './cart/cart.component';
+import {CartService} from './cart/cart.service';
+import { ConformationComponent } from './conformation/conformation.component';
+import { ReloaderComponent } from './reloader/reloader.component';
 
 
 @NgModule({
@@ -29,6 +36,11 @@ import {MusicModule} from './admin/music.module';
     ErrorPageComponent,
     PageNotFoundComponent,
     AlertComponent,
+    ShopListComponent,
+    ShopItemComponent,
+    CartComponent,
+    ConformationComponent,
+    ReloaderComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +57,8 @@ import {MusicModule} from './admin/music.module';
     AlertService,
     AuthenticationService,
     ItemService,
+    ItemResolver,
+    CartService,
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

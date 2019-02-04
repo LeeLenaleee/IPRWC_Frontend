@@ -1,0 +1,34 @@
+<div class="container">
+  <div *ngIf="items.length == 0">
+    <h2>No items added yet, please go shop first.</h2>
+    <button [routerLink]="['/shop']">To The shop</button>
+  </div>
+
+  <div class="col-12" *ngIf="items.length > 0">
+    <hr>
+
+    <div *ngFor="let item of items;
+             let i = index">
+      <h2>Album: {{item.naamAlbum}}</h2>
+      <h2>Artiest: {{item.zanger}}</h2>
+      <h2>Price: {{item.prijs | currency:'EUR':'symbol'}}</h2>
+      <img [src]="item.cover" alt="cover img of {{item.naamAlbum}}">
+      <div class="col justify-content-end but">
+        <button class="btn btn-danger" (click)="onDelete(i)">verwijder</button>
+        <button class="btn btn-success" (click)="add(item)">add</button>
+      </div>
+      <hr>
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col">
+          <div id="paypal-checkout"></div>
+        </div>
+        <div class="col">
+          <h2>Total = {{ totalPrice | currency:'EUR':'symbol' }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

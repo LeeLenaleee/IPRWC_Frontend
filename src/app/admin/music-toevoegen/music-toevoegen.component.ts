@@ -19,12 +19,12 @@ export class MusicToevoegenComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (confirm('Weet u het zeker?')) {
-      const onkost = this.musicService.formToOnkost(form);
-      this.musicService.postOnkost(onkost)
+      const onkost = this.musicService.formToMusic(form);
+      this.musicService.postMusic(onkost)
         .subscribe(
           () => {
             alert('Music toegevoegd');
-            this.musicService.getOnkosten();
+            this.musicService.getMusics();
           }
         );
       form.onReset();

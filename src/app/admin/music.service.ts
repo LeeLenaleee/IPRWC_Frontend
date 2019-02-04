@@ -8,51 +8,42 @@ import {ApiService} from '../shared/api.service';
 @Injectable()
 export class MusicService {
 
-  onkostenEmitter = new EventEmitter<ItemModel[]>();
-  onkostenSelected = new EventEmitter<ItemModel>();
+  musicEmitter = new EventEmitter<ItemModel[]>();
+  musicSelected = new EventEmitter<ItemModel>();
 
   constructor(private apiService: ApiService) {}
 
-  getOnkosten() {
+  getMusics() {
     this.apiService.get<ItemModel[]>('/music').subscribe(
       (music: ItemModel[]) => {
-        this.onkostenEmitter.emit(music);
+        this.musicEmitter.emit(music);
       }
     );
   }
 
-  getOnkost(index: number) {
+  getMusic(index: number) {
     return this.apiService.getById<ItemModel>('/music', index);
   }
 
-  getOnkostenByOmschrijving(omschrijving: string) {
+  getMusicByOmschrijving(omschrijving: string) {
     return this.apiService.get<ItemModel[]>('/music/zoek?omschrijving=' + omschrijving);
   }
 
-  formToOnkost(form: NgForm) {
+  formToMusic(form: NgForm) {
     const music = new ItemModel(null, form.value['prijs'], form.value['album'], form.value['producent'],
       form.value['zanger'], form.value['lengte'], form.value['cover']);
     return music;
   }
 
-  postOnkost(music: ItemModel) {
+  postMusic(music: ItemModel) {
     return this.apiService.post<ItemModel>('/music', music);
   }
 
-  putOnkost(music: ItemModel, id: number) {
+  putMusic(music: ItemModel, id: number) {
     return this.apiService.put<ItemModel>('/music', id, music);
   }
 
-  deleteOnkost(id: number) {
+  deleteMusic(id: number) {
     return this.apiService.delete<ItemModel>('/music', id);
-  }
-
-  toServerDateTransform(date) {
-    const dateSendingToServer = new DatePipe('en-US').transform(date, 'dd-MM-yyyy');
-    return dateSendingToServer;
-  }
-
-  getKostenPosten(): Observable<ItemModel[]> {
-    return this.apiService.get<ItemModel[]>('/music');
   }
 }

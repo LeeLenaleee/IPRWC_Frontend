@@ -18,7 +18,7 @@ export class MusicComponent implements OnInit {
   constructor(private onkostenService: MusicService) { }
 
   ngOnInit() {
-    this.onkostenService.onkostenSelected
+    this.onkostenService.musicSelected
       .subscribe(
         (music: ItemModel) => {
           this.selectedMusic = music;
