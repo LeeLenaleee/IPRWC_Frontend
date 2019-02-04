@@ -1,4 +1,17 @@
-# iprwc
+# Iprwc
+## Test acounts:
+Admin
+email: test@test.com
+password: test
+
+User:
+email: test1@test.com
+password: test1
+
+Availeble page:
+iprwc.ga
+
+# Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
 
