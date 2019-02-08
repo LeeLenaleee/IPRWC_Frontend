@@ -22,7 +22,8 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload' })],
+  // imports: [RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload' })],
+  imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
   exports: [RouterModule],
   providers: [MusicResolver]
 })

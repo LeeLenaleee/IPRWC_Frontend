@@ -9,7 +9,7 @@ export class AuthenticationService {
 
   login(email: string, password: string) {
     const passwordHashed = sha256(password);
-    return this.http.post<any>(`http://iprwc.ga:8080/api/login`, { gebruikersnaam: email, wachtwoord: passwordHashed })
+    return this.http.post<any>(`http://192.168.1.26:8080/api/login`, { gebruikersnaam: email, wachtwoord: passwordHashed })
       .pipe(map(user => {
         // login successful
         if (user !== null) {
@@ -29,6 +29,6 @@ export class AuthenticationService {
   }
 
   register(username: string, email: string, password: string) {
-   return this.http.post<any>('http://localhost:8080/api/register', {username: username, email: email, password: sha256(password)});
+   return this.http.post<any>('http://192.168.1.26:8080/api/register', {username: username, email: email, password: sha256(password)});
   }
 }

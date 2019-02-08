@@ -7,7 +7,7 @@ import {ItemModel} from '../models/item.model';
 export class ItemService {
   itemEmitter = new EventEmitter<ItemModel[]>();
   headers = this.createHeaders();
-  apiBase = 'http://iprwc.ga:8080/api/';
+  apiBase = 'http://192.168.1.26:8080/api/';
 
   constructor(private httpClient: HttpClient) {
   }
