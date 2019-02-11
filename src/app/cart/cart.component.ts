@@ -75,6 +75,7 @@ export class CartComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   updateItems() {
     this.totalPrice = 0;
+    this.items = this.cartService.getItems();
     for (const item of this.items) {
       this.totalPrice += item.prijs;
     }
@@ -82,6 +83,11 @@ export class CartComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   onDelete(index: number) {
     this.cartService.deleteItem(index);
+    this.updateItems();
+  }
+
+  add(item: ItemModel) {
+    this.cartService.addItem(item);
     this.updateItems();
   }
 
@@ -105,11 +111,6 @@ export class CartComponent implements OnInit, AfterViewChecked, OnDestroy {
       scripttagElement.onload = resolve;
       document.body.appendChild(scripttagElement);
     });
-  }
-
-  add(item: ItemModel) {
-    this.cartService.items.push(item);
-    this.router.navigate(['/reload']);
   }
 
   ngOnDestroy(): void {

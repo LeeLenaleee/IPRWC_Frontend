@@ -17,6 +17,10 @@ export class CartService {
     this.itemsChanged.next(this.items.slice());
   }
 
+  addItem(item: ItemModel) {
+    this.items.push(item);
+  }
+
   clearCart() {
     console.log(this.items);
     this.items.splice(0, this.items.length);
