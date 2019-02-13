@@ -1,4 +1,5 @@
 <div class="card-body custom">
+  <div class="inner">
     <h3>{{ item.naamAlbum }}</h3>
   <span>
     <img [src]="item.cover"
@@ -7,4 +8,5 @@
     <h5>{{ item.zanger }}</h5>
     <p> € {{ item.prijs }}</p>
     <button class="btn" type="button" (click)="addToCart()">Buy</button>
+  </div>
 </div>

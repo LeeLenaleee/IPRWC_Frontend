@@ -43,3 +43,41 @@ p{
   margin-bottom: -5px;
 }
 
+@media screen and (max-width: 767px) {
+
+  .card-body{
+    padding: 0;
+    width: 380px;
+    height: 480px;
+    margin-top: 20px;
+  }
+  /*
+  #inner{
+    display: table;
+    margin: 0 50% 0 auto;
+  }
+  */
+
+
+  .card-body>img{
+    width:auto;
+    height: 150px;
+    max-width: 150px;
+    display:block;
+    margin:auto;
+  }
+
+  /*.card-body{
+    text-align: center;
+    display:block;
+    margin:auto;
+  }*/
+/*  button{
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%
+  }*/
+
+}
+
