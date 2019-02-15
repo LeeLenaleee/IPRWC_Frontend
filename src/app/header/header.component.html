@@ -3,22 +3,22 @@
     <div>
       <ul class="nav justify-content-center">
         <li>
-          <img id="logo" src="../../../assets/record-logo.png" alt="">
+          <img id="logo" src="assets/record-logo.png" alt="">
         </li>
         <li class="nav-item" routerLinkActive="active-class" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" routerLink="/"><img src="../../assets/baseline_home_black_48dp.png"> Main Menu</a>
+          <a class="nav-link" routerLink="/"><img src="assets/baseline_home_black_48dp.png"> Main Menu</a>
         </li>
         <li class="nav-item" routerLinkActive="active-class">
-          <a class="nav-link" routerLink="/shop"><img src="../../assets/vinyl.png"> Platen</a>
+          <a class="nav-link" routerLink="/shop"><img src="assets/vinyl.png"> Platen</a>
         </li>
 
         <li class="nav-item" routerLinkActive="active-class" *ngIf="admin">
-          <a class="nav-link" routerLink="/admin"><img src="../../assets/admin-settings-male.png">Admin</a>
+          <a class="nav-link" routerLink="/admin"><img src="assets/admin-settings-male.png">Admin</a>
         </li>
-        <li class="nav-item li-hover"><a routerLink="/login" class="nav-link"><img src="../../assets/user-logo.png" alt=""></a></li>
-        <li class="nav-item li-hover"><a routerLink="/cart" class="nav-link"><img src="../../assets/shopping-cart-logo.png" alt=""></a></li>
+        <li class="nav-item li-hover"><a routerLink="/login" class="nav-link"><img src="assets/user-logo.png" alt=""></a></li>
+        <li class="nav-item li-hover"><a routerLink="/cart" class="nav-link"><img src="assets/shopping-cart-logo.png" alt=""></a></li>
         <li *ngIf="logout">
-          <img src="../../assets/logout-icon.png" alt="logout" id="logout" (click)="clickLogout()">
+          <img src="assets/logout-icon.png" alt="logout" id="logout" (click)="clickLogout()">
         </li>
       </ul>
     </div>
