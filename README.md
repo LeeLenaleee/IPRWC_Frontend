@@ -1,15 +1,5 @@
 # Iprwc
-## Test acounts:
-Admin
-email: test@test.com
-password: test
-
-User:
-email: test1@test.com
-password: test1
-
-Availeble page:
-iprwc.ga
+School project made for a webb app course. We hade to make a webshop using Angular as our front end javascript framework and dropwizzard as our backend api (See backend Repo).
 
 # Project
 
